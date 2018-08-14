@@ -1,0 +1,36 @@
+<h1>POLL:</h1>
+   
+    <div   *ngFor=" let survey of surveys  ">
+      
+        <h2>Question: {{survey.author}}</h2>
+        <div>            
+        <h4>answ: {{ survey.author1 }}</h4>
+        <h4>Number of Votes:{{ num1 }}</h4>
+        <h4>Number of Votes:{{ survey.rate }}</h4>
+         <button  (click)="num1 = num1 + 1">Vote HERE</button>
+         <button (click)="voteUp(survey)">V</button>
+      </div>
+  
+      <div>
+        <h4>answ: {{ survey.author2 }}</h4>       
+        <h4>Number of Votes:{{ num2 }}</h4>
+        <button id="up" (click)="num2 = num2 + 1">Vote HERE</button>
+        <button id="up" (click)="voteUp(survey)">V</button>
+      </div> 
+      <div>
+          <h4>answ: {{ survey.author3 }}</h4>       
+          <h4>Number of Votes:{{ num3 }}</h4>
+          <button id="up" (click)="num3 = num3 + 1">Vote HERE</button>
+          <button id="up" (click)="voteUp(survey)">V</button>
+        </div> 
+        <div>
+            <h4>answ: {{ survey.author4 }}</h4>       
+            <h4>Number of Votes:{{ num4 }}</h4>
+          
+            <button id="up" (click)="num4 = num4 + 1">Vote HERE</button>
+            <button id="up" (click)="voteUp(survey)">V</button>
+          
+          </div> 
+        <button class="done" (click)="dash()" >Done Voting</button>
+    </div>
+

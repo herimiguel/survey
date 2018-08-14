@@ -1,0 +1,36 @@
+
+<div *ngIf="user.name">Hello, {{user.name}} </div> 
+<div>
+  <button *ngIf="user.name" (click)="toLogout()">Logout</button>
+  <button class="logButton" *ngIf="!user.name" (click)="toLogout()">Login To Create A Poll</button>
+</div>
+
+<!-- <button  (click)="toLogout()">Logout</button> -->
+
+<h1>Current Polls:</h1>
+
+<table>
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Survey Question</th>
+    <th>Action</th>
+    <th>Date Posted</th>
+    <th>to VIew</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let info of surveys">
+      <td> {{ info.customerName }} </td>
+      <td> {{ info.author }} </td>
+    <!-- <td>  <a routerLink ="['toResults', survey.id]">{{ info.author }}</a></td> -->
+    <!-- <td> routerLink="['survey', survey._id]"> {{ info.author }}</a> </td> -->
+     <td> <span *ngIf="info.customer == user._id"><button (click)="deleteApt(info._id)" >Delete Poll</button></span> </td> 
+     <td> {{ info.created_at  | date: 'longDate'}} </td>
+     <td ><button (click)='results()'>View Poll</button></td>
+     
+  </tr>
+</tbody>
+</table>
+<button (click)="makeSur()">Create a New Poll</button>
+<!-- <button (click)="results()">View ResultTest</button> -->

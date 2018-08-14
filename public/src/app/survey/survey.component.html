@@ -1,0 +1,91 @@
+   <form (submit)="createSurvey(ansData)" #ansData="ngForm">
+  <!-- <label for="content">Question:</label> 
+  <input
+    name="content"
+    [(ngModel)]="survey.content"    
+    type="text"
+    required
+    minlength= "5"
+    #content="ngModel"
+    ansData= 'content'
+    
+    >
+    <div *ngIf="content.errors">
+        <div class="errors" *ngIf="content.errors.required">Question is required.</div>  
+        </div>
+    <br> -->
+    <label for="author">Question</label> 
+    <input 
+    type="text"
+    required
+    name='author'
+    minlength="3"
+    [(ngModel)]="survey.author"
+    #author="ngModel"
+    ansData= 'author'
+    >
+    <div *ngIf="author.errors">
+        <div class="errors" *ngIf="author.errors.required"> Question  is required.</div>  
+        </div>
+    <br>
+    <label for="author1">Answer 1</label> 
+    <input 
+    type="text"
+    required
+    name='author1'
+    minlength="4"
+    [(ngModel)]="survey.author1"
+    #author1="ngModel"
+    ansData= 'author1'
+    >
+    <div *ngIf="author1.errors">
+        <div class="errors" *ngIf="author1.errors.required">Answer 1 is required.</div>  
+        </div>
+    <br>
+    <label for="author2">Answer 2</label> 
+    <input 
+    type="text"
+    required
+    name='author2'
+    minlength="4"
+    [(ngModel)]="survey.author2"
+    #author2="ngModel"
+    ansData= 'author2'
+    >
+    <div *ngIf="author2.errors">
+        <div class="errors" *ngIf="author2.errors.required">Answer 2 is required.</div>  
+        </div>
+    <br>
+    <label for="author3">Answer 3</label> 
+    <input 
+    type="text"
+    required
+    name='author3'
+    minlength="4"
+    [(ngModel)]="survey.author3"
+    #author3="ngModel"
+    ansData= 'author3'
+    >
+    <div *ngIf="author3.errors">
+        <div class="errors" *ngIf="author3.errors.required">Answer 3 is required.</div>  
+        </div><br>
+        <label for="author4">Answer 4</label> 
+    <input 
+    type="text"
+    required
+    name='author4'
+    minlength="4"
+    [(ngModel)]="survey.author4"
+    #author4="ngModel"
+    ansData= 'author4'
+    >
+    <div *ngIf="author4.errors">
+        <div class="errors" *ngIf="author4.errors.required">Answer 4 is required.</div>  
+        </div>
+    <br>
+
+    <button type='submit'   [disabled]="!ansData.valid" >Create Poll</button>
+  </form>
+  <button (click)='dash()'>Cancel</button>
+
+  <!-- [disabled]="!ansData.valid" -->
